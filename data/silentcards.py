@@ -1,10 +1,11 @@
-from assets import SilentCard
+from assets import SilentCard, CardType, Rarity
+from tags import Tags
 
-Neutralize = SilentCard(0, "Attack", "Common", ["Weak"])
-Survivor = SilentCard(1, "Skill", "Common", ["Block", "Discard"])
-Anticipate = SilentCard(0, "Skill", "Common", ["Dexterity"])
-Backflip = SilentCard(1, "Skill", "Common", ["Block", "Draw"])
-Blade_Dance = SilentCard(1, "Skill", "Common", ["Shivs", "Exhaust"])
+Neutralize = SilentCard(0, CardType.ATTACK, Rarity.COMMON, [Tags.WEAK, Tags.DEBUFF])
+Survivor = SilentCard(1, CardType.SKILL, Rarity.COMMON, [Tags.BLOCK, Tags.DISCARD])
+Anticipate = SilentCard(0, CardType.SKILL, Rarity.COMMON, [Tags.DEXTERITY, Tags.BUFF])
+Backflip = SilentCard(1, CardType.SKILL, Rarity.COMMON, [Tags.BLOCK, Tags.DRAW])
+Blade_Dance = SilentCard(1, CardType.SKILL, Rarity.COMMON, [Tags.SHIVS, Tags.EXHAUST])
 
 SilentCardlist = {
     101: Neutralize,

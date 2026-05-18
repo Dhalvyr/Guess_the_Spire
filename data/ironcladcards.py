@@ -1,10 +1,11 @@
-from assets import IronCladCard
+from assets import IronCladCard, CardType, Rarity
+from tags import Tags
 
-Bash = IronCladCard(2, "Attack", "Common", {"Vulnerable"})
-Anger = IronCladCard(0, "Attack", "Common", {"Copy", "Discard Pile"})
-Armaments = IronCladCard(1, "Skill", "Common", {"Block", "Upgrade", "Hand"})
-Blood_Wall = IronCladCard(2, "Skill", "Common", {"Block", "Life loss"}, 2)
-Bloodletting = IronCladCard(0, "Skill", "Common", {"Energy Generation", "Life loss"}, 3)
+Bash = IronCladCard(2, CardType.ATTACK, Rarity.COMMON, {Tags.VULNERABLE, Tags.DEBUFF})
+Anger = IronCladCard(0, CardType.ATTACK, Rarity.COMMON, {Tags.COPY, Tags.DISCARDPILE})
+Armaments = IronCladCard(1, CardType.SKILL, Rarity.COMMON, {Tags.BLOCK, Tags.UPGRADE, Tags.HAND})
+Blood_Wall = IronCladCard(2, CardType.SKILL, Rarity.COMMON, {Tags.BLOCK, Tags.LIFELOSS}, 2)
+Bloodletting = IronCladCard(0, CardType.SKILL, Rarity.COMMON, {Tags.ENERGYGEN, Tags.LIFELOSS}, 3)
 
 IroncladCardlist = {
     301: Bash,

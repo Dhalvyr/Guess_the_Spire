@@ -1,10 +1,11 @@
-from assets import NecrobinderCard
+from assets import NecrobinderCard, CardType, Rarity
+from tags import Tags
 
-Bodyguard = NecrobinderCard(1, "Skill", "Common", {"Summon"})
-Unleash = NecrobinderCard(1, "Attack", "Common", {"Osty", "Osty's HP"})
-Afterlife = NecrobinderCard(1, "Skill", "Common", {"Summon", "Exhaust"})
-Blight_Strike = NecrobinderCard(1, "Attack", "Common", {"Doom"})
-Defile = NecrobinderCard(1, "Attack", "Common", {"Ethereal"})
+Bodyguard = NecrobinderCard(1, CardType.SKILL, Rarity.COMMON, {Tags.SUMMON})
+Unleash = NecrobinderCard(1, CardType.ATTACK, Rarity.COMMON, {Tags.OSTY, Tags.OSTYS_HP})
+Afterlife = NecrobinderCard(1, CardType.SKILL, Rarity.COMMON, {Tags.SUMMON, Tags.EXHAUST})
+Blight_Strike = NecrobinderCard(1, CardType.ATTACK, Rarity.COMMON, {Tags.DOOM})
+Defile = NecrobinderCard(1, CardType.ATTACK, Rarity.COMMON, {Tags.ETHEREAL})
 
 NecrobinderCardlist = {
     501: Bodyguard,
