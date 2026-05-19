@@ -1,5 +1,5 @@
-from assets import SilentCard, CardType, Rarity
-from tags import Tags
+from data.assets import SilentCard, CardType, Rarity
+from data.tags import Tags
 
 Neutralize = SilentCard(0, CardType.ATTACK, Rarity.COMMON, [Tags.WEAK, Tags.DEBUFF])
 Survivor = SilentCard(1, CardType.SKILL, Rarity.COMMON, [Tags.BLOCK, Tags.DISCARD])

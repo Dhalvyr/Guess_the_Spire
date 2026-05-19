@@ -1,5 +1,5 @@
-from assets import NecrobinderCard, CardType, Rarity
-from tags import Tags
+from data.assets import NecrobinderCard, CardType, Rarity
+from data.tags import Tags
 
 Bodyguard = NecrobinderCard(1, CardType.SKILL, Rarity.COMMON, {Tags.SUMMON})
 Unleash = NecrobinderCard(1, CardType.ATTACK, Rarity.COMMON, {Tags.OSTY, Tags.OSTYS_HP})

@@ -1,5 +1,5 @@
-from assets import RegentCard, CardType, Rarity
-from tags import Tags
+from data.assets import RegentCard, CardType, Rarity
+from data.tags import Tags
 
 Falling_Star = RegentCard(0, CardType.ATTACK, Rarity.COMMON, {Tags.WEAK, Tags.VULNERABLE, Tags.DEBUFF}, 2)
 Venerate = RegentCard(1, CardType.SKILL, Rarity.COMMON, {Tags.STARGEN})

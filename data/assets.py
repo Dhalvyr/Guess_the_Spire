@@ -1,6 +1,6 @@
 from typing import Literal
 from enum import Enum
-from tags import Tags
+from data.tags import Tags
 
 class CardType(Enum):
     ATTACK = "Attack"

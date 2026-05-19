@@ -1,5 +1,5 @@
-from assets import DefectCard, CardType, Rarity
-from tags import Tags
+from data.assets import DefectCard, CardType, Rarity
+from data.tags import Tags
 
 Dualcast = DefectCard(1, CardType.ATTACK, Rarity.COMMON, {Tags.EVOKE})
 Zap = DefectCard(1, CardType.SKILL, Rarity.COMMON, {Tags.CHANNEL, Tags.LIGHTNING, Tags.ORB})

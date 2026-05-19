@@ -1,9 +1,9 @@
-from silentcards import SilentCardlist
-from ironcladcards import IroncladCardlist
-from regentcards import RegentCardlist
-from defectcards import DefectCardlist
-from necrobinder import NecrobinderCardlist
-from colorless import ColorlessCardlist
+from data.silentcards import SilentCardlist
+from data.ironcladcards import IroncladCardlist
+from data.regentcards import RegentCardlist
+from data.defectcards import DefectCardlist
+from data.necrobinder import NecrobinderCardlist
+from data.colorless import ColorlessCardlist
 
 def cardfetch(cardid):
     match cardid:
@@ -22,30 +22,27 @@ def cardfetch(cardid):
         case _:
             return "Card ID not recognized"
         
-def cardcompare(idpkd, idguess):
+def cardcompare(idpkd, idguess, matched):
     picked = cardfetch(idpkd)
     guessed = cardfetch(idguess)
-    matched = {
-        "Colour": "Unknown",
-        "Card Type": "Unknown",
-        "Card Rarity": "Unknown",
-        "Tags": ["Unknown"],
-    }
     if picked.colour == guessed.colour and picked.colour != matched["Colour"]:
-        matched["Colour"] = guessed.colour
+        matched["Colour"] = picked.colour
     
-    if picked.c_type == guessed.c_type and picked.c_type != matched["Card Type"]:
-        matched["Card Type"] = picked.c_type
+    if picked.e_cost == guessed.e_cost and picked.e_cost != matched["Energy Cost"]:
+        matched["Energy Cost"] = picked.e_cost
+    
+    if picked.c_type == guessed.c_type and picked.c_type.value != matched["Card Type"]:
+        matched["Card Type"] = picked.c_type.value
 
-    if picked.rarity == guessed.rarity and picked.rarity != matched["Card Rarity"]:
-        matched["Card Rarity"] = picked.rarity
+    if picked.rarity == guessed.rarity and picked.rarity.value != matched["Card Rarity"]:
+        matched["Card Rarity"] = picked.rarity.value
 
     for tag in guessed.tag:
         if tag in picked.tag and tag not in matched["Tags"]:
             if matched["Tags"] == ["Unknown"]:
-                matched["Tags"] = [tag]
+                matched["Tags"] = [tag.value]
             else:
-                matched["Tags"].append(tag)
+                matched["Tags"].append(tag.value)
     
     if picked.colour == "IronClad" and guessed.colour == "IronClad":
         if picked.l_cost and guessed.l_cost:

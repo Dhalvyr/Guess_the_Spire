@@ -1,5 +1,5 @@
-from assets import IronCladCard, CardType, Rarity
-from tags import Tags
+from data.assets import IronCladCard, CardType, Rarity
+from data.tags import Tags
 
 Bash = IronCladCard(2, CardType.ATTACK, Rarity.COMMON, {Tags.VULNERABLE, Tags.DEBUFF})
 Anger = IronCladCard(0, CardType.ATTACK, Rarity.COMMON, {Tags.COPY, Tags.DISCARDPILE})

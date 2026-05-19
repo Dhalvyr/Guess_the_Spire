@@ -1,5 +1,5 @@
-from assets import ColorlessCard, CardType, Rarity
-from tags import Tags
+from data.assets import ColorlessCard, CardType, Rarity
+from data.tags import Tags
 
 Automation = ColorlessCard(1, CardType.POWER, Rarity.UNCOMMON, {Tags.ENERGYGEN})
 Catastrophe = ColorlessCard(2, CardType.SKILL, Rarity.UNCOMMON, {Tags.RANDOM, Tags.DRAWPILE})
