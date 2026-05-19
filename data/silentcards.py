@@ -13,5 +13,4 @@ SilentCardlist = {
     103: Anticipate,
     104: Backflip,
     105: Blade_Dance,
-
 }
