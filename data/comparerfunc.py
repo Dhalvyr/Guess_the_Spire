@@ -37,12 +37,13 @@ def cardcompare(idpkd, idguess, matched):
     if picked.rarity == guessed.rarity and picked.rarity.value != matched["Card Rarity"]:
         matched["Card Rarity"] = picked.rarity.value
 
-    for tag in guessed.tag:
-        if tag in picked.tag and tag not in matched["Tags"]:
-            if matched["Tags"] == ["Unknown"]:
-                matched["Tags"] = [tag.value]
-            else:
-                matched["Tags"].append(tag.value)
+    if guessed.tag :
+        for tag in guessed.tag:
+            if tag in picked.tag and tag not in matched["Tags"]:
+                if matched["Tags"] == ["Unknown"]:
+                    matched["Tags"] = [tag.value]
+                else:
+                    matched["Tags"].append(tag.value)
     
     if picked.colour == "IronClad" and guessed.colour == "IronClad":
         if picked.l_cost and guessed.l_cost:
@@ -56,6 +57,6 @@ def cardcompare(idpkd, idguess, matched):
             if picked.s_cost == guessed.s_cost:
                 matched["Star Cost"] = picked.s_cost
     
-    return matched
+    
 
 

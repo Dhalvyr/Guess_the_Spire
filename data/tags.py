@@ -3,6 +3,7 @@ from enum import Enum
 class Tags(Enum):
     BLOCK = "Block"
     DRAW = "Draw"
+    RETAIN = "Retain"
     SUMMON = "Summon"
     OSTY = "Osty"
     OSTYS_HP = "Osty's Hp"
@@ -39,3 +40,4 @@ class Tags(Enum):
     BUFF = "Buff"
     CHOICE = "Choose"
     COPY = "Copy"
+    NEXTTURN = "Next Turn effect"
